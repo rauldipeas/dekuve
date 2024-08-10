@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
-sudo apt install -y debootstrap live-build live-config
+wget -q --show-progress http://ftp.us.debian.org/debian/pool/main/l/live-build/live-build_20230502_all.deb
+sudo apt install -y ./live-build*.deb
 sudo rm -rfv /tmp/dekuve
 mkdir -p /tmp/dekuve
 cd /tmp/dekuve
