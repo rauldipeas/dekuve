@@ -13,6 +13,8 @@ brightness-udev
 brightnessctl
 broadcom-sta-dkms
 ca-certificates
+calamares
+calamares-settings-debian
 catfish
 cmake
 cups
