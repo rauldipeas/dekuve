@@ -7,7 +7,7 @@ sudo apt install -y\
     libev-dev\
     libgl-dev\
     libepoxy-dev\
-    libpcre3-dev\
+    libpcre2-dev\
     libpixman-1-dev\
     libx11-xcb-dev\
     libxcb1-dev\
@@ -26,6 +26,7 @@ sudo apt install -y\
     libxext-dev\
     meson\
     ninja-build\
+    pkg-config\
     uthash-dev
 git clone https://github.com/jonaburg/picom
 cd picom
