@@ -1,7 +1,8 @@
 #!/bin/bash
 set -e
+wget -q --show-progress http://ftp.us.debian.org/debian/pool/main/d/debian-keyring/debian-keyring_2022.12.24_all.deb
 wget -q --show-progress http://ftp.us.debian.org/debian/pool/main/l/live-build/live-build_20230502_all.deb
-sudo apt install -y ./live-build*.deb
+sudo apt install -y ./debian-keyring*.deb ./live-build*.deb
 sudo rm -rfv /tmp/dekuve
 mkdir -p /tmp/dekuve
 cd /tmp/dekuve
