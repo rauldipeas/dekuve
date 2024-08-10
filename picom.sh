@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 sudo apt install -y\
+    git\
     libconfig-dev\
     libdbus-1-dev\
     libegl-dev\
@@ -8,6 +9,7 @@ sudo apt install -y\
     libgl-dev\
     libepoxy-dev\
     libpcre2-dev\
+    libpcre3-dev\
     libpixman-1-dev\
     libx11-xcb-dev\
     libxcb1-dev\
