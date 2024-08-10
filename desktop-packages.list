@@ -49,12 +49,11 @@ libegl-dev
 libev-dev
 libevdev-dev
 libgl-dev
-libgnome-keyring-dev
 libimobiledevice-utils
 libimobiledevice6
 libinput-dev
 libinput-pad-1.0-1
-lininput-pad-dev
+libinput-pad-dev
 libinput-pad-xtest
 libinput-tools
 libm17n-im-config-dev
@@ -136,7 +135,6 @@ tumbler-plugins-extra
 uthash-dev
 vala-panel-appmenu
 vala-panel-appmenu-common
-vala-panel-appmenu-registrar
 vlc
 wget
 xfce4
