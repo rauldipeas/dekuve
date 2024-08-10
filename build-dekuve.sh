@@ -32,5 +32,5 @@ lb config\
 	--quiet\
 	--system live\
 	--updates true
-cp desktop-packages.list config/package-lists/desktop.list.chroot
+wget -q --show-progress -O config/package-lists/desktop.list.chroot https://github.com/rauldipeas/dekuve/raw/main/desktop-packages.list
 sudo lb build 2>&1|tee /tmp/build-dekuve.log
