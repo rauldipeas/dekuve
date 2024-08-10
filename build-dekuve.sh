@@ -35,14 +35,21 @@ lb config\
 wget -qO config/package-lists/desktop.list.chroot https://github.com/rauldipeas/dekuve/raw/main/desktop-packages.list
 cd config/packages.chroot
 wget -q --show-progress "$(wget -qO- https://api.github.com/repos/balena-io/etcher/releases|grep browser_download_url|grep .deb|head -n1|cut -d '"' -f4)"
+dpkg-name blaena-etcher*.deb
 wget -q --show-progress "$(wget -qO- https://api.github.com/repos/f3d-app/f3d/releases|grep browser_download_url|grep -v md5|grep -v nightly|grep x86_64.deb|head -n1|cut -d '"' -f4)"
+dpkg-name F3D*.deb
 wget -q --show-progress "$(wget -qO- https://api.github.com/repos/localsend/localsend/releases|grep browser_download_url|grep .deb|head -n1|cut -d '"' -f4)"
+dpkg-name LocalSend*.deb
 wget -q --show-progress "$(wget -qO- https://api.github.com/repos/JezerM/web-greeter/releases|grep browser_download_url|grep debian.deb|head -n1|cut -d '"' -f4)"
+dpkg-name web-greeter*.deb
 #wget -q --show-progress https://ppa.launchpadcontent.net/cappelikan/ppa/ubuntu/pool/main/m/mainline/"$(wget -qO- https://ppa.launchpadcontent.net/cappelikan/ppa/ubuntu/pool/main/m/mainline/|grep amd64.deb|tail -n1|cut -d '"' -f8)"
 wget -q --show-progress "$(wget -qO- https://api.github.com/repos/bkw777/mainline/releases|grep browser_download_url|grep .deb|head -n1|cut -d '"' -f4)"
+dpkg-name mainline*.deb
 #wget -q --show-progress https://ppa.launchpadcontent.net/xubuntu-dev/extras/ubuntu/pool/main/x/xfce4-docklike-plugin/"$(wget -qO- https://ppa.launchpadcontent.net/xubuntu-dev/extras/ubuntu/pool/main/x/xfce4-docklike-plugin/|grep amd64.deb|tail -n1|cut -d '"' -f8)"
 wget -q --show-progress https://mxrepo.com/mx/repo/pool/main/x/xfce4-docklike-plugin/"$(wget -qO- https://mxrepo.com/mx/repo/pool/main/x/xfce4-docklike-plugin/|grep .deb|tail -n1|cut -d '"' -f2)"
+dpkg-name xfce4-docklike-plugin*.deb
 wget -q --show-progress https://ftp5.gwdg.de/pub/linux/debian/mint/packages/pool/main/w/webapp-manager/"$(wget -qO- https://ftp5.gwdg.de/pub/linux/debian/mint/packages/pool/main/w/webapp-manager/|grep .deb|tail -n1|cut -d '"' -f2)"
+dpkg-name webapp-manager*.deb
 bash <(wget -qO- https://github.com/rauldipeas/dekuve/raw/main/picom.sh)
 cd ../..
 sudo lb build 2>&1|tee /tmp/build-dekuve.log
