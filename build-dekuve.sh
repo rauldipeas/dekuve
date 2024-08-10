@@ -35,7 +35,7 @@ lb config\
 wget -qO config/package-lists/desktop.list.chroot https://github.com/rauldipeas/dekuve/raw/main/desktop-packages.list
 cd config/packages.chroot
 wget -q --show-progress "$(wget -qO- https://api.github.com/repos/balena-io/etcher/releases|grep browser_download_url|grep .deb|head -n1|cut -d '"' -f4)"
-dpkg-name blaena-etcher*.deb
+dpkg-name balena-etcher*.deb
 wget -q --show-progress "$(wget -qO- https://api.github.com/repos/f3d-app/f3d/releases|grep browser_download_url|grep -v md5|grep -v nightly|grep x86_64.deb|head -n1|cut -d '"' -f4)"
 dpkg-name F3D*.deb
 wget -q --show-progress "$(wget -qO- https://api.github.com/repos/localsend/localsend/releases|grep browser_download_url|grep .deb|head -n1|cut -d '"' -f4)"
