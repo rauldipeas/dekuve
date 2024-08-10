@@ -18,11 +18,11 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@latest
+      - uses: actions/checkout@v4
       - name: DEKUVE build
         run: bash build-dekuve.sh
       - name: ISO upload
-        uses: actions/upload-artifact@latest
+        uses: actions/upload-artifact@v4
         with:
           name: dekuve
           path: /tmp/dekuve/dekuve*.iso
