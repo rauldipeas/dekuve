@@ -12,6 +12,7 @@ sudo apt install -y\
     libx11-xcb-dev\
     libxcb1-dev\
     libxcb-composite0-dev\
+    libxcb-xinerama0-dev\
     libxcb-damage0-dev\
     libxcb-glx0-dev\
     libxcb-image0-dev\
