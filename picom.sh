@@ -7,7 +7,7 @@ sudo apt install -y\
     libev-dev\
     libgl-dev\
     libepoxy-dev\
-    libpcre2-dev\
+    libpcre3-dev\
     libpixman-1-dev\
     libx11-xcb-dev\
     libxcb1-dev\
