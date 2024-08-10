@@ -32,6 +32,7 @@ lb config\
 	--quiet\
 	--system live\
 	--updates true
+wget -qO config/hooks/calamares.chroot https://github.com/rauldipeas/dekuve/raw/main/calamares.sh
 wget -qO config/package-lists/desktop.list.chroot https://github.com/rauldipeas/dekuve/raw/main/desktop-packages.list
 cd config/packages.chroot
 wget -q --show-progress "$(wget -qO- https://api.github.com/repos/balena-io/etcher/releases|grep browser_download_url|grep .deb|head -n1|cut -d '"' -f4)"
@@ -57,4 +58,6 @@ unzip dekuve.zip
 rm dekuve.zip
 mv binary config/includes.binary
 mv chroot config/includes.chroot
+chmod +x config/includes.chroot/usr/local/bin/*
+find config/includes.chroot/ -name "*.sh" -exec chmod +x {} \;
 sudo lb build 2>&1|tee /tmp/build-dekuve.log
