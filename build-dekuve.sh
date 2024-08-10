@@ -24,7 +24,6 @@ lb config\
 	--iso-application 'DEKUVE'\
 	--iso-publisher 'DEKUVE; https://dekuve.top; contact@dekuve.top'\
 	--iso-volume 'DEKUVE'\
-	--linux-flavours amd64\
 	--mirror-bootstrap 'https://deb.debian.org/debian/'\
 	--mirror-chroot 'http://deb.debian.org/debian/'\
 	--mirror-binary 'http://deb.debian.org/debian/'\
@@ -32,7 +31,8 @@ lb config\
 	--quiet\
 	--system live\
 	--updates true
-wget -qO config/hooks/calamares.chroot https://github.com/rauldipeas/dekuve/raw/main/calamares.sh
+wget -qO config/hooks/normal/calamares.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/calamares.sh
+wget -qO config/hooks/normal/kernel.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/kernel.sh
 wget -qO config/package-lists/desktop.list.chroot https://github.com/rauldipeas/dekuve/raw/main/desktop-packages.list
 cd config/packages.chroot
 wget -q --show-progress "$(wget -qO- https://api.github.com/repos/balena-io/etcher/releases|grep browser_download_url|grep .deb|head -n1|cut -d '"' -f4)"
