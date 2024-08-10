@@ -3,11 +3,11 @@ set -e
 sudo apt install -y\
     libconfig-dev\
     libdbus-1-dev\
+    libegl-dev\
     libev-dev\
-    libevdev-dev\
-    libgl1-mesa-dev\
+    libgl-dev\
+    libepoxy-dev\
     libpcre2-dev\
-    libpcre++-dev\
     libpixman-1-dev\
     libx11-xcb-dev\
     libxcb1-dev\
@@ -20,10 +20,10 @@ sudo apt install -y\
     libxcb-render0-dev\
     libxcb-render-util0-dev\
     libxcb-shape0-dev\
+    libxcb-util-dev\
     libxcb-xfixes0-dev\
-    libxcb-xinerama0-dev\
-    libxext-dev\
     meson\
+    ninja-build\
     uthash-dev
 git clone https://github.com/jonaburg/picom
 cd picom
@@ -52,3 +52,4 @@ EOF
 mv build/src/picom picom/usr/bin/picom
 cd ..
 dpkg-deb -b picom/picom .
+rm -rf picom

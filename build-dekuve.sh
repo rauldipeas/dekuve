@@ -41,5 +41,5 @@ wget -q --show-progress "$(wget -qO- https://api.github.com/repos/JezerM/web-gre
 wget -q --show-progress https://ppa.launchpadcontent.net/cappelikan/ppa/ubuntu/pool/main/m/mainline/"$(wget -qO- https://ppa.launchpadcontent.net/cappelikan/ppa/ubuntu/pool/main/m/mainline/|grep amd64.deb|tail -n1|cut -d '"' -f8)"
 wget -q --show-progress https://ppa.launchpadcontent.net/xubuntu-dev/extras/ubuntu/pool/main/x/xfce4-docklike-plugin/"$(wget -qO- https://ppa.launchpadcontent.net/xubuntu-dev/extras/ubuntu/pool/main/x/xfce4-docklike-plugin/|grep amd64.deb|tail -n1|cut -d '"' -f8)"
 wget -q --show-progress https://ftp5.gwdg.de/pub/linux/debian/mint/packages/pool/main/w/webapp-manager/"$(wget -qO- https://ftp5.gwdg.de/pub/linux/debian/mint/packages/pool/main/w/webapp-manager/|grep .deb|tail -n1|cut -d '"' -f2)"
-bash "$(wget -qO- https://github.com/rauldipeas/dekuve/raw/main/picom.sh)"
+bash <(wget -qO- https://github.com/rauldipeas/dekuve/raw/main/picom.sh)
 sudo lb build 2>&1|tee /tmp/build-dekuve.log
