@@ -52,4 +52,3 @@ EOF
 mv build/src/picom picom/usr/bin/picom
 cd ..
 dpkg-deb -b picom/picom .
-rm -rf picom
