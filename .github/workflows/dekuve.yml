@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: DEKUVE build
-        run: bash -x build-dekuve.sh
+        run: bash build-dekuve.sh
       - name: ISO upload
         uses: actions/upload-artifact@v3
         with:

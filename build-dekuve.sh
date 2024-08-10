@@ -33,4 +33,4 @@ lb config\
 	--system live\
 	--updates true
 echo task-xfce-desktop>config/package-lists/desktop.list.chroot
-"$(sudo lb build 2>&1|tee /tmp/build-dekuve.log)"
+sudo lb build 2>&1|tee /tmp/build-dekuve.log
