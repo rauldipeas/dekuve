@@ -104,8 +104,6 @@ ntfs-3g
 onboard
 p7zip-full
 pavucontrol
-pavucontrol-qt
-pavucontrol-qt-l10n
 php
 php-imap
 pipewire
@@ -137,6 +135,9 @@ vala-panel-appmenu
 vala-panel-appmenu-common
 vlc
 wget
+xdg-desktop-portal
+xdg-desktop-portal-gtk
+xdg-user-dirs-gtk
 xfce4
 xfce4-appfinder
 xfce4-appmenu-plugin
@@ -167,11 +168,8 @@ xfconf
 xfdesktop4
 xfwm4
 xfsprogs
+xorriso
 xserver-xorg-input-evdev
 xserver-xorg-input-libinput
 xserver-xorg-input-synaptics
 xwayland
-xdg-desktop-portal
-xdg-desktop-portal-gtk
-xdg-user-dirs-gtk
-xorriso
