@@ -6,4 +6,4 @@ echo "deb http://fasttrack.debian.net/debian-fasttrack/ $(lsb_release -cs)-backp
 sudo tee -a /etc/apt/sources.list.d/fasttrack.list
 sudo apt install -y fasttrack-archive-keyring
 sudo apt update
-sudo apt install --no-install-recommends -y virtualbox-guest-dkms virtualbox-guest-x11
+sudo apt install --no-install-recommends -y virtualbox-guest-x11
