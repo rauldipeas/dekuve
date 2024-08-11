@@ -12,13 +12,7 @@ lb config\
 	--architectures amd64\
 	--archive-areas 'main contrib non-free non-free-firmware'\
 	--backports true\
-	--bootappend-live "\
-		live-config.hostname=DEKUVE\
-		live-config.username=dekuve\
-		live-config.user-fullname=DEKUVE\
-		live-config.user-locales=en-US,pt-BR\
-		live-config.utc=true\
-		"\
+	--bootappend-live "boot=live quiet splash live-config.hostname=DEKUVE live-config.username=dekuve live-config.user-fullname=DEKUVE live-config.user-locales=en-US,pt-BR live-config.utc=true"\
 	--chroot-squashfs-compression-type xz\
 	--color\
 	--compression xz\
