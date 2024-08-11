@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
-#wget -q --show-progress http://ftp.us.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2023.3+deb12u1_all.deb
+wget -q --show-progress http://ftp.us.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2023.3+deb12u1_all.deb
 wget -q --show-progress http://ftp.us.debian.org/debian/pool/main/l/live-build/live-build_20230502_all.deb
-sudo apt install -y ./live-build*.deb
+sudo apt install -y ./debian-archive-keyring*.deb ./live-build*.deb
 sudo rm -rfv /tmp/dekuve
 mkdir -p /tmp/dekuve
 cd /tmp/dekuve
@@ -12,8 +12,6 @@ lb config\
 	--architectures amd64\
 	--archive-areas 'main contrib non-free non-free-firmware'\
 	--backports true\
-	--bootstrap-flavour standard\
-	--bootstrap-keyring debian-archive-keyring\
 	--chroot-squashfs-compression-type xz\
 	--color\
 	--compression xz\
