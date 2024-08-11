@@ -54,7 +54,7 @@ wget -q --show-progress https://ftp5.gwdg.de/pub/linux/debian/mint/packages/pool
 dpkg-name webapp-manager*.deb
 bash <(wget -qO- https://github.com/rauldipeas/dekuve/raw/main/picom.sh)
 cd ../..
-wget -q --show-progress -O dekuve.zip 'https://www.dropbox.com/scl/fi/iivsbt0d4bhvssv8ohzfl/dekuve.zip?rlkey=wop3k95i7z6t9g0lpwdo321v8&dl=1'
+wget -q --show-progress -O dekuve.zip 'https://www.dropbox.com/scl/fi/erhpzghrhpfcubofnnjdm/dekuve.zip?rlkey=advz5obcky8gm2sekumc3n63v&dl=1'
 unzip -q dekuve.zip
 rm dekuve.zip
 #mv binary/* config/includes.binary/
