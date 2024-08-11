@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-wget -q --show-progress http://ftp.us.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2023.3+deb12u1_all.deb
+#wget -q --show-progress http://ftp.us.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2023.3+deb12u1_all.deb
 wget -q --show-progress http://ftp.us.debian.org/debian/pool/main/l/live-build/live-build_20230502_all.deb
 sudo apt install -y ./debian-archive-keyring*.deb ./live-build*.deb
 sudo rm -rfv /tmp/dekuve
@@ -12,9 +12,12 @@ lb config\
 	--architectures amd64\
 	--archive-areas 'main contrib non-free non-free-firmware'\
 	--backports true\
+	--bootstrap-flavour standard\
+	--bootstrap-keyring debian-archive-keyring\
 	--chroot-squashfs-compression-type xz\
 	--color\
 	--compression xz\
+	--debconf-frontend noninteractive\
 	--debian-installer live\
 	--debian-installer-distribution bookworm\
 	--distribution bookworm\
@@ -32,7 +35,7 @@ lb config\
 	--system live\
 	--updates true
 #wget -qO config/hooks/normal/calamares.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/calamares.sh
-wget -qO config/hooks/normal/balena-etcher.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/balena-etcher.sh
+#wget -qO config/hooks/normal/balena-etcher.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/balena-etcher.sh
 wget -qO config/hooks/normal/kernel.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/kernel.sh
 wget -qO config/package-lists/desktop.list.chroot https://github.com/rauldipeas/dekuve/raw/main/desktop-packages.list
 cd config/packages.chroot
