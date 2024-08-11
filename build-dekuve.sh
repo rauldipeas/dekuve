@@ -60,7 +60,7 @@ wget -q --show-progress -O dekuve.zip 'https://www.dropbox.com/scl/fi/erhpzghrhp
 unzip -q dekuve.zip
 rm dekuve.zip
 #mv binary/* config/includes.binary/
-#rm -rf binary
+rm -rf binary
 mv chroot config/includes.chroot
 chmod +x config/includes.chroot/usr/local/bin/*
 find config/includes.chroot/ -name "*.sh" -exec chmod +x {} \;
