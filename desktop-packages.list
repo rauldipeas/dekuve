@@ -136,6 +136,7 @@ tumbler-plugins-extra
 uthash-dev
 vala-panel-appmenu
 vala-panel-appmenu-common
+vlc
 wget
 xdg-desktop-portal
 xdg-desktop-portal-gtk
