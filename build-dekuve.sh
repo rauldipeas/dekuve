@@ -12,7 +12,6 @@ lb config\
 	--architectures amd64\
 	--archive-areas 'main contrib non-free non-free-firmware'\
 	--backports true\
-	--bootappend-live "boot=live quiet splash live-config.hostname=DEKUVE live-config.username=dekuve live-config.user-fullname=DEKUVE live-config.user-locales=en-US,pt-BR live-config.utc=true"\
 	--chroot-squashfs-compression-type xz\
 	--color\
 	--compression xz\
@@ -37,6 +36,7 @@ wget -qO config/hooks/normal/balena-etcher.hook.chroot https://github.com/rauldi
 wget -qO config/hooks/normal/calamares.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/calamares.sh
 wget -qO config/hooks/normal/kernel.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/kernel.sh
 wget -qO config/hooks/normal/plymouth.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/plymouth.sh
+wget -qO config/hooks/normal/virtualbox-x11.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/virtualbox-x11.sh
 wget -qO config/package-lists/desktop.list.chroot https://github.com/rauldipeas/dekuve/raw/main/desktop-packages.list
 cd config/packages.chroot
 wget -q --show-progress "$(wget -qO- https://api.github.com/repos/f3d-app/f3d/releases|grep browser_download_url|grep -v md5|grep -v nightly|grep x86_64.deb|head -n1|cut -d '"' -f4)"
@@ -53,6 +53,7 @@ wget -q --show-progress https://mxrepo.com/mx/repo/pool/main/x/xfce4-docklike-pl
 dpkg-name xfce4-docklike-plugin*.deb
 wget -q --show-progress https://ftp5.gwdg.de/pub/linux/debian/mint/packages/pool/main/w/webapp-manager/"$(wget -qO- https://ftp5.gwdg.de/pub/linux/debian/mint/packages/pool/main/w/webapp-manager/|grep .deb|tail -n1|cut -d '"' -f2)"
 dpkg-name webapp-manager*.deb
+bash <(wget -qO- https://github.com/rauldipeas/dekuve/raw/main/cortile.sh)
 bash <(wget -qO- https://github.com/rauldipeas/dekuve/raw/main/picom.sh)
 cd ../..
 wget -q --show-progress -O dekuve.zip 'https://www.dropbox.com/scl/fi/erhpzghrhpfcubofnnjdm/dekuve.zip?rlkey=advz5obcky8gm2sekumc3n63v&dl=1'
