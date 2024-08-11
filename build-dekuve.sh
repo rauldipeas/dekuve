@@ -31,7 +31,7 @@ lb config\
 	--quiet\
 	--system live\
 	--updates true
-wget -qO config/hooks/normal/calamares.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/calamares.sh
+#wget -qO config/hooks/normal/calamares.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/calamares.sh
 wget -qO config/hooks/normal/kernel.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/kernel.sh
 wget -qO config/package-lists/desktop.list.chroot https://github.com/rauldipeas/dekuve/raw/main/desktop-packages.list
 cd config/packages.chroot
