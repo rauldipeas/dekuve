@@ -12,7 +12,7 @@ lb config\
 	--architectures amd64\
 	--archive-areas 'main contrib non-free non-free-firmware'\
 	--backports true\
-	--boot-live-append "\
+	--bootappend-live "\
 		live-config.hostname=DEKUVE\
 		live-config.username=dekuve\
 		live-config.user-fullname=DEKUVE\
