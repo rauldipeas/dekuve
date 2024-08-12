@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 sudo apt install -o Dpkg::Options::="--force-confold" --no-install-recommends --force-yes -y calamares calamares-settings-debian
+sudo sed -i 's/pkexec/sudo/g' /usr/bin/install-debian
 cat <<EOF | sudo tee /usr/share/applications/install-debian.desktop
 [Desktop Entry]
 Type=Application
