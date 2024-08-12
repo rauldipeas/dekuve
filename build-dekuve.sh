@@ -16,7 +16,7 @@ lb config\
 	--color\
 	--compression xz\
 	--debconf-frontend noninteractive\
-	--debian-installer live\
+	--debian-installer none\
 	--debian-installer-distribution bookworm\
 	--distribution bookworm\
 	--distribution-binary bookworm\
@@ -59,7 +59,7 @@ cd ../..
 wget -q --show-progress -O dekuve.zip 'https://www.dropbox.com/scl/fi/erhpzghrhpfcubofnnjdm/dekuve.zip?rlkey=advz5obcky8gm2sekumc3n63v&dl=1'
 unzip -q dekuve.zip
 rm dekuve.zip
-#mv binary/* config/includes.binary/
+mv binary/* config/includes.binary/
 rm -rf binary
 mv chroot config/includes.chroot
 chmod +x config/includes.chroot/usr/local/bin/*
