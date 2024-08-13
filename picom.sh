@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-sudo -A apt install -y\
+SUDO_ASKPASS="$HOME/sudo_askpass" sudo -A apt install -y\
     git\
     libconfig-dev\
     libdbus-1-dev\

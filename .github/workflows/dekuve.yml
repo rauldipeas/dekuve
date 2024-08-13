@@ -21,8 +21,6 @@ jobs:
       - uses: actions/checkout@v4
       - name: DEKUVE build
         run: bash build-dekuve.sh
-        env:
-          SUDO_ASKPASS: ${{ secrets.SUDO_ASKPASS }}
       - name: ISO upload
         uses: actions/upload-artifact@v4
         with:

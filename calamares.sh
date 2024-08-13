@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
-sudo -A apt install -o Dpkg::Options::="--force-confold" --no-install-recommends --force-yes -y calamares calamares-settings-debian
-sudo -A sed -i 's/pkexec/sudo -A/g' /usr/bin/install-debian
-cat <<EOF | sudo -A tee /usr/share/applications/install-debian.desktop
+SUDO_ASKPASS="$HOME/sudo_askpass" sudo -A apt install -o Dpkg::Options::="--force-confold" --no-install-recommends --force-yes -y calamares calamares-settings-debian
+SUDO_ASKPASS="$HOME/sudo_askpass" sudo -A sed -i 's/pkexec/SUDO_ASKPASS="$HOME/sudo_askpass" sudo -A/g' /usr/bin/install-debian
+cat <<EOF | SUDO_ASKPASS="$HOME/sudo_askpass" sudo -A tee /usr/share/applications/install-debian.desktop
 [Desktop Entry]
 Type=Application
 Version=1.0
