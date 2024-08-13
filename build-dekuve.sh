@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-if [ -f "$HOME"/sudo_askpass ];then
+if test -f "$HOME"/sudo_askpass;then
 	export SUDO_ASKPASS="$HOME/sudo_askpass"
 	alias sudo='sudo -A'
 fi
