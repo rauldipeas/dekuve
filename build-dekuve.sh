@@ -1,8 +1,11 @@
 #!/bin/bash
 set -e
-if test -f "$HOME"/sudo_askpass;then
+if [ -f "$HOME"/sudo_askpass ];then
+	echo askpass helper enabled
 	export SUDO_ASKPASS="$HOME/sudo_askpass"
 	alias sudo='sudo -A'
+	else
+	echo askpass helper skipped
 fi
 rm -f debian-archive-keyring*.deb live-build*.deb>/dev/null
 wget -q --show-progress http://ftp.us.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2023.3+deb12u1_all.deb
