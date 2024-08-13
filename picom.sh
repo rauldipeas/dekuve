@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-sudo -A apt install -y\
+sudo apt install -y\
     git\
     libconfig-dev\
     libdbus-1-dev\

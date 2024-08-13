@@ -1,4 +1,4 @@
 #!/bin/bash
 set -e
-sudo -A plymouth-set-default-theme dekuve
-sudo -A update-initramfs -u
+sudo plymouth-set-default-theme dekuve
+sudo update-initramfs -u
