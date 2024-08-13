@@ -3,8 +3,8 @@ set -e
 rm -f debian-archive-keyring*.deb live-build*.deb>/dev/null
 wget -q --show-progress http://ftp.us.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2023.3+deb12u1_all.deb
 wget -q --show-progress http://ftp.us.debian.org/debian/pool/main/l/live-build/live-build_20230502_all.deb
-sudo apt install -y ./debian-archive-keyring*.deb ./live-build*.deb
-sudo rm -rfv /tmp/dekuve
+sudo -A apt install -y ./debian-archive-keyring*.deb ./live-build*.deb
+sudo -A rm -rfv /tmp/dekuve
 mkdir -p /tmp/dekuve
 cd /tmp/dekuve
 lb config\
@@ -66,4 +66,4 @@ rm -rf binary
 mv chroot config/includes.chroot
 chmod +x config/includes.chroot/usr/local/bin/*
 find config/includes.chroot/ -name "*.sh" -exec chmod +x {} \;
-sudo lb build 2>&1|tee /tmp/build-dekuve.log
+sudo -A lb build 2>&1|tee /tmp/build-dekuve.log
