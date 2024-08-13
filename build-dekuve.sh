@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+rm -f debian-archive-keyring*.deb live-build*.deb>/dev/null
 wget -q --show-progress http://ftp.us.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2023.3+deb12u1_all.deb
 wget -q --show-progress http://ftp.us.debian.org/debian/pool/main/l/live-build/live-build_20230502_all.deb
 sudo apt install -y ./debian-archive-keyring*.deb ./live-build*.deb
@@ -48,13 +49,11 @@ wget -q --show-progress "$(wget -qO- https://api.github.com/repos/localsend/loca
 dpkg-name LocalSend*.deb
 wget -q --show-progress "$(wget -qO- https://api.github.com/repos/JezerM/web-greeter/releases|grep browser_download_url|grep debian.deb|head -n1|cut -d '"' -f4)"
 dpkg-name web-greeter*.deb
-#wget -q --show-progress https://ppa.launchpadcontent.net/cappelikan/ppa/ubuntu/pool/main/m/mainline/"$(wget -qO- https://ppa.launchpadcontent.net/cappelikan/ppa/ubuntu/pool/main/m/mainline/|grep amd64.deb|tail -n1|cut -d '"' -f8)"
 wget -q --show-progress "$(wget -qO- https://api.github.com/repos/bkw777/mainline/releases|grep browser_download_url|grep .deb|head -n1|cut -d '"' -f4)"
 dpkg-name mainline*.deb
-#wget -q --show-progress https://ppa.launchpadcontent.net/xubuntu-dev/extras/ubuntu/pool/main/x/xfce4-docklike-plugin/"$(wget -qO- https://ppa.launchpadcontent.net/xubuntu-dev/extras/ubuntu/pool/main/x/xfce4-docklike-plugin/|grep amd64.deb|tail -n1|cut -d '"' -f8)"
 wget -q --show-progress https://mxrepo.com/mx/repo/pool/main/x/xfce4-docklike-plugin/"$(wget -qO- https://mxrepo.com/mx/repo/pool/main/x/xfce4-docklike-plugin/|grep amd64.deb|tail -n1|cut -d '"' -f2)"
 dpkg-name xfce4-docklike-plugin*.deb
-wget -q --show-progress https://ftp5.gwdg.de/pub/linux/debian/mint/packages/pool/main/w/webapp-manager/"$(wget -qO- https://ftp5.gwdg.de/pub/linux/debian/mint/packages/pool/main/w/webapp-manager/|grep .deb|tail -n1|cut -d '"' -f2)"
+wget -q --show-progress http://packages.linuxmint.com/pool/main/w/webapp-manager/"$(wget -qO- http://packages.linuxmint.com/pool/main/w/webapp-manager/|grep .deb|tail -n1|cut -d '"' -f4)"
 dpkg-name webapp-manager*.deb
 bash <(wget -qO- https://github.com/rauldipeas/dekuve/raw/main/cortile.sh)
 bash <(wget -qO- https://github.com/rauldipeas/dekuve/raw/main/picom.sh)
