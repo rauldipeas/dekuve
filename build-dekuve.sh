@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 if [ -f "$HOME"/sudo_askpass ];then
-	echo askpass helper enabled
 	export SUDO_ASKPASS="$HOME/sudo_askpass"
 	alias sudo='sudo -A'
+	echo askpass helper enabled
 	else
 	echo askpass helper skipped
 fi
