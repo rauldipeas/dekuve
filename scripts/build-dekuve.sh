@@ -39,15 +39,15 @@ lb config\
 	--quiet\
 	--system live\
 	--updates true
-wget -qO config/hooks/normal/balena-etcher.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/balena-etcher.sh
-wget -qO config/hooks/normal/calamares.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/calamares.sh
-wget -qO config/hooks/normal/extra-repositories.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/extra-repositories.sh
-wget -qO config/hooks/normal/flathub.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/flathub.sh
-wget -qO config/hooks/normal/grub-settings.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/grub-settings.sh
-wget -qO config/hooks/normal/kernel.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/kernel.sh
-wget -qO config/hooks/normal/plymouth.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/plymouth.sh
-wget -qO config/hooks/normal/virtualbox-x11.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/virtualbox-x11.sh
-wget -qO config/package-lists/desktop.list.chroot https://github.com/rauldipeas/dekuve/raw/main/desktop-packages.list
+wget -qO config/hooks/normal/balena-etcher.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/balena-etcher.sh
+wget -qO config/hooks/normal/calamares.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/calamares.sh
+wget -qO config/hooks/normal/extra-repositories.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/extra-repositories.sh
+wget -qO config/hooks/normal/flathub.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/flathub.sh
+wget -qO config/hooks/normal/grub-settings.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/grub-settings.sh
+wget -qO config/hooks/normal/kernel.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/kernel.sh
+wget -qO config/hooks/normal/plymouth.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/plymouth.sh
+wget -qO config/hooks/normal/virtualbox-x11.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/virtualbox-x11.sh
+wget -qO config/package-lists/desktop.list.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/desktop-packages.list
 cd config/packages.chroot
 wget -q --show-progress "$(wget -qO- https://api.github.com/repos/f3d-app/f3d/releases|grep browser_download_url|grep -v md5|grep -v nightly|grep x86_64.deb|head -n1|cut -d '"' -f4)"
 dpkg-name F3D*.deb
@@ -61,8 +61,8 @@ wget -q --show-progress https://mxrepo.com/mx/repo/pool/main/x/xfce4-docklike-pl
 dpkg-name xfce4-docklike-plugin*.deb
 wget -q --show-progress http://packages.linuxmint.com/pool/main/w/webapp-manager/"$(wget -qO- http://packages.linuxmint.com/pool/main/w/webapp-manager/|grep .deb|tail -n1|cut -d '"' -f4)"
 dpkg-name webapp-manager*.deb
-bash <(wget -qO- https://github.com/rauldipeas/dekuve/raw/main/cortile.sh)
-bash <(wget -qO- https://github.com/rauldipeas/dekuve/raw/main/picom.sh)
+bash <(wget -qO- https://github.com/rauldipeas/dekuve/raw/main/scripts/cortile.sh)
+bash <(wget -qO- https://github.com/rauldipeas/dekuve/raw/main/scripts/picom.sh)
 cd ../..
 wget -q --show-progress -O dekuve.zip 'https://www.dropbox.com/scl/fi/erhpzghrhpfcubofnnjdm/dekuve.zip?rlkey=advz5obcky8gm2sekumc3n63v&dl=1'
 unzip -q dekuve.zip
