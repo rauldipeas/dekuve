@@ -29,4 +29,4 @@ jobs:
       - name: Log cleanup
         run: bash -x scripts/actions-cleanup.sh
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GitHub_TOKEN: ${{ secrets.GH_TOKEN }}
