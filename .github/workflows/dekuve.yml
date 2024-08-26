@@ -26,3 +26,7 @@ jobs:
         with:
           name: dekuve
           path: /tmp/dekuve/dekuve*.iso
+      - name: Log cleanup
+        run: bash -x scripts/actions-cleanup.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
