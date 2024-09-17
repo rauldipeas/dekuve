@@ -21,11 +21,19 @@ jobs:
       - uses: actions/checkout@v4
       - name: DEKUVE build
         run: bash scripts/build-dekuve.sh
-      - name: ISO upload
+      - name: ISO upload (GitHub Actions artifact)
         uses: actions/upload-artifact@v4
         with:
           name: dekuve
           path: /tmp/dekuve/dekuve*.iso
+      - name: ISO upload (FTP)
+        uses: tomasbkk/action-ftp-upload@v1.0
+        with:
+          user: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          host: ${{ secrets.FTP_HOST }}
+          src: /tmp/dekuve/dekuve-amd64.hybrid.iso
+          dest: dekuve-amd64.hybrid.iso
       - name: Log cleanup
         run: bash -x scripts/actions-cleanup.sh
         env:
