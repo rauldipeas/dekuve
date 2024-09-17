@@ -35,7 +35,6 @@ gnome-font-viewer
 gnome-package-updater
 gnome-software
 gnome-software-plugin-flatpak
-gnome-system-tools
 grub-pc-bin
 grub2-common
 gtk2-engines-pixbuf
@@ -93,6 +92,7 @@ libxfce4util7
 lightdm
 m17n-im-config
 make
+mate-user-admin
 menulibre
 mesa-utils
 meson
