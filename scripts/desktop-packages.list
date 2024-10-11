@@ -50,7 +50,6 @@ libegl-dev
 libev-dev
 libevdev-dev
 libgl-dev
-libgnome-keyring-dev
 libheif1
 libimobiledevice-utils
 libimobiledevice6
