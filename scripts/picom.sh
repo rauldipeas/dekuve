@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 sudo -A apt install -y\
+    cmake\
     git\
     libconfig-dev\
     libdbus-1-dev\
