@@ -17,3 +17,10 @@ Categories=Qt;System;
 StartupWMClass=calamares
 StartupNotify=True
 EOF
+cat <<EOF |sudo tee /etc/live/config.conf.d/debian-custom.conf>/dev/null
+LIVE_HOSTNAME=dekuve
+#LIVE_USERNAME=user
+LIVE_USER_FULLNAME="DEKUVE Live User"
+#LIVE_LOCALES=pt_BR.UTF-8
+#LIVE_KEYBOARD_LAYOUTS=br
+EOF
