@@ -39,16 +39,16 @@ lb config\
 	--quiet\
 	--system live\
 	--updates true
-wget -qO config/hooks/normal/balena-etcher.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/balena-etcher.sh
-wget -qO config/hooks/normal/calamares.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/calamares.sh
-wget -qO config/hooks/normal/extra-repositories.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/extra-repositories.sh
-wget -qO config/hooks/normal/flathub.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/flathub.sh
-wget -qO config/hooks/normal/grub-settings.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/grub-settings.sh
-wget -qO config/hooks/normal/kernel.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/kernel.sh
-wget -qO config/hooks/normal/plymouth.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/plymouth.sh
-wget -qO config/hooks/normal/virtualbox-x11.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/virtualbox-x11.sh
-wget -qO config/package-lists/desktop.list.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/desktop-packages.list
-cd config/packages.chroot
+wget -qO /tmp/dekuve/config/hooks/normal/balena-etcher.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/balena-etcher.sh
+wget -qO /tmp/dekuve/config/hooks/normal/calamares.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/calamares.sh
+wget -qO /tmp/dekuve/config/hooks/normal/extra-repositories.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/extra-repositories.sh
+wget -qO /tmp/dekuve/config/hooks/normal/flathub.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/flathub.sh
+wget -qO /tmp/dekuve/config/hooks/normal/grub-settings.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/grub-settings.sh
+wget -qO /tmp/dekuve/config/hooks/normal/kernel.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/kernel.sh
+wget -qO /tmp/dekuve/config/hooks/normal/plymouth.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/plymouth.sh
+wget -qO /tmp/dekuve/config/hooks/normal/virtualbox-x11.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/virtualbox-x11.sh
+wget -qO /tmp/dekuve/config/package-lists/desktop.list.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/desktop-packages.list
+cd /tmp/dekuve/config/packages.chroot
 wget -q --show-progress "$(wget -qO- https://api.github.com/repos/f3d-app/f3d/releases|grep browser_download_url|grep -v md5|grep -v nightly|grep x86_64.deb|head -n1|cut -d '"' -f4)"
 dpkg-name F3D*.deb
 wget -q --show-progress "$(wget -qO- https://api.github.com/repos/localsend/localsend/releases|grep browser_download_url|grep .deb|head -n1|cut -d '"' -f4)"
@@ -63,16 +63,16 @@ wget -q --show-progress http://packages.linuxmint.com/pool/main/w/webapp-manager
 dpkg-name webapp-manager*.deb
 bash <(wget -qO- https://github.com/rauldipeas/dekuve/raw/main/scripts/cortile.sh)
 bash <(wget -qO- https://github.com/rauldipeas/dekuve/raw/main/scripts/picom.sh)
-cd ../..
+cd /tmp/dekuve/
 wget -q --show-progress -O dekuve.zip 'https://www.dropbox.com/scl/fi/erhpzghrhpfcubofnnjdm/dekuve.zip?rlkey=advz5obcky8gm2sekumc3n63v&dl=1'
 unzip -q dekuve.zip
 rm dekuve.zip
-mv binary/* config/includes.binary/
+mv binary/* /tmp/dekuve/config/includes.binary/
 rm -rf binary
-mv chroot config/includes.chroot
-chmod +x config/includes.chroot/usr/local/bin/*
-find config/includes.chroot/ -name "*.sh" -exec chmod +x {} \;
-mkdir -p config/includes/chroot/{usr/local/bin,etc/xdg/autostart,etc/X11/xorg.conf.d,opt/etc}
+mv chroot /tmp/dekuve/config/includes.chroot
+chmod +x /tmp/dekuve/config/includes.chroot/usr/local/bin/*
+find /tmp/dekuve/config/includes.chroot/ -name "*.sh" -exec chmod +x {} \;
+mkdir -p /tmp/dekuve/config/includes/chroot/{usr/local/bin,etc/xdg/autostart,etc/X11/xorg.conf.d,opt/etc}
 wget -qO /tmp/dekuve/config/includes/chroot/usr/local/bin/dpcontrol https://github.com/rauldipeas/dekuve/raw/main/assets/dpcontrol/dpcontrol
 wget -qO /tmp/dekuve/config/includes/chroot/etc/xdg/autostart/dpcontrol.desktop https://github.com/rauldipeas/dekuve/raw/main/assets/dpcontrol/dpcontrol.desktop
 wget -qO /tmp/dekuve/config/includes/chroot/etc/X11/xorg.conf.d/00-touchpad.conf https://github.com/rauldipeas/dekuve/raw/main/assets/touchpad.conf
