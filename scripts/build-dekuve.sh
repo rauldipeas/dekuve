@@ -73,8 +73,8 @@ mv chroot config/includes.chroot
 chmod +x config/includes.chroot/usr/local/bin/*
 find config/includes.chroot/ -name "*.sh" -exec chmod +x {} \;
 mkdir -p config/includes/chroot/{usr/local/bin,etc/xdg/autostart,etc/X11/xorg.conf.d,opt/etc}
-wget -qO config/includes/chroot/usr/local/bin/dpcontrol https://github.com/rauldipeas/dekuve/raw/main/assets/dpcontrol/dpcontrol
-wget -qO config/includes/chroot/etc/xdg/autostart/dpcontrol.desktop https://github.com/rauldipeas/dekuve/raw/main/assets/dpcontrol/dpcontrol.desktop
-wget -qO config/includes/chroot/etc/X11/xorg.conf.d/00-touchpad.conf https://github.com/rauldipeas/dekuve/raw/main/assets/touchpad.conf
-wget -qO config/includes/chroot/opt/etc/blur-effect.conf https://github.com/rauldipeas/dekuve/raw/main/assets/blur-effect.conf
+wget -qO /tmp/dekuve/config/includes/chroot/usr/local/bin/dpcontrol https://github.com/rauldipeas/dekuve/raw/main/assets/dpcontrol/dpcontrol
+wget -qO /tmp/dekuve/config/includes/chroot/etc/xdg/autostart/dpcontrol.desktop https://github.com/rauldipeas/dekuve/raw/main/assets/dpcontrol/dpcontrol.desktop
+wget -qO /tmp/dekuve/config/includes/chroot/etc/X11/xorg.conf.d/00-touchpad.conf https://github.com/rauldipeas/dekuve/raw/main/assets/touchpad.conf
+wget -qO /tmp/dekuve/config/includes/chroot/opt/etc/blur-effect.conf https://github.com/rauldipeas/dekuve/raw/main/assets/blur-effect.conf
 sudo -A lb build 2>&1|tee /tmp/build-dekuve.log
