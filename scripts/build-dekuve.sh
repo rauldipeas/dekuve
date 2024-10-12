@@ -39,15 +39,15 @@ lb config\
 	--quiet\
 	--system live\
 	--updates true
-wget -qO /tmp/dekuve/config/hooks/normal/balena-etcher.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/balena-etcher.sh
-wget -qO /tmp/dekuve/config/hooks/normal/calamares.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/calamares.sh
-wget -qO /tmp/dekuve/config/hooks/normal/extra-repositories.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/extra-repositories.sh
-wget -qO /tmp/dekuve/config/hooks/normal/flathub.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/flathub.sh
-wget -qO /tmp/dekuve/config/hooks/normal/grub-settings.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/grub-settings.sh
-wget -qO /tmp/dekuve/config/hooks/normal/kernel.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/kernel.sh
-wget -qO /tmp/dekuve/config/hooks/normal/plymouth.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/plymouth.sh
-wget -qO /tmp/dekuve/config/hooks/normal/virtualbox-x11.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/virtualbox-x11.sh
-wget -qO /tmp/dekuve/config/package-lists/desktop.list.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/desktop-packages.list
+wget -q --show-progress -O /tmp/dekuve/config/hooks/normal/balena-etcher.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/balena-etcher.sh
+wget -q --show-progress -O /tmp/dekuve/config/hooks/normal/calamares.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/calamares.sh
+wget -q --show-progress -O /tmp/dekuve/config/hooks/normal/extra-repositories.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/extra-repositories.sh
+wget -q --show-progress -O /tmp/dekuve/config/hooks/normal/flathub.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/flathub.sh
+wget -q --show-progress -O /tmp/dekuve/config/hooks/normal/grub-settings.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/grub-settings.sh
+wget -q --show-progress -O /tmp/dekuve/config/hooks/normal/kernel.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/kernel.sh
+wget -q --show-progress -O /tmp/dekuve/config/hooks/normal/plymouth.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/plymouth.sh
+wget -q --show-progress -O /tmp/dekuve/config/hooks/normal/virtualbox-x11.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/virtualbox-x11.sh
+wget -q --show-progress -O /tmp/dekuve/config/package-lists/desktop.list.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/desktop-packages.list
 cd /tmp/dekuve/config/packages.chroot
 wget -q --show-progress "$(wget -qO- https://api.github.com/repos/f3d-app/f3d/releases|grep browser_download_url|grep -v md5|grep -v nightly|grep x86_64.deb|head -n1|cut -d '"' -f4)"
 dpkg-name F3D*.deb
@@ -72,9 +72,9 @@ rm -rf binary
 mv chroot /tmp/dekuve/config/includes.chroot
 chmod +x /tmp/dekuve/config/includes.chroot/usr/local/bin/*
 find /tmp/dekuve/config/includes.chroot/ -name "*.sh" -exec chmod +x {} \;
-mkdir -p /tmp/dekuve/config/includes/chroot/{usr/local/bin,etc/xdg/autostart,etc/X11/xorg.conf.d,opt/etc}
-wget -qO /tmp/dekuve/config/includes/chroot/usr/local/bin/dpcontrol https://github.com/rauldipeas/dekuve/raw/main/assets/dpcontrol/dpcontrol
-wget -qO /tmp/dekuve/config/includes/chroot/etc/xdg/autostart/dpcontrol.desktop https://github.com/rauldipeas/dekuve/raw/main/assets/dpcontrol/dpcontrol.desktop
-wget -qO /tmp/dekuve/config/includes/chroot/etc/X11/xorg.conf.d/00-touchpad.conf https://github.com/rauldipeas/dekuve/raw/main/assets/touchpad.conf
-wget -qO /tmp/dekuve/config/includes/chroot/opt/etc/blur-effect.conf https://github.com/rauldipeas/dekuve/raw/main/assets/blur-effect.conf
+mkdir -p /tmp/dekuve/config/includes.chroot/{usr/local/bin,etc/xdg/autostart,etc/X11/xorg.conf.d,opt/etc}
+wget -q --show-progress -O /tmp/dekuve/config/includes.chroot/usr/local/bin/dpcontrol https://github.com/rauldipeas/dekuve/raw/main/assets/dpcontrol/dpcontrol
+wget -q --show-progress -O /tmp/dekuve/config/includes.chroot/etc/xdg/autostart/dpcontrol.desktop https://github.com/rauldipeas/dekuve/raw/main/assets/dpcontrol/dpcontrol.desktop
+wget -q --show-progress -O /tmp/dekuve/config/includes.chroot/etc/X11/xorg.conf.d/00-touchpad.conf https://github.com/rauldipeas/dekuve/raw/main/assets/touchpad.conf
+wget -q --show-progress -O /tmp/dekuve/config/includes.chroot/opt/etc/blur-effect.conf https://github.com/rauldipeas/dekuve/raw/main/assets/blur-effect.conf
 sudo -A lb build 2>&1|tee /tmp/build-dekuve.log
