@@ -74,6 +74,7 @@ chmod +x /tmp/dekuve/config/includes.chroot/usr/local/bin/*
 find /tmp/dekuve/config/includes.chroot/ -name "*.sh" -exec chmod +x {} \;
 mkdir -p /tmp/dekuve/config/includes.chroot/{usr/local/bin,etc/xdg/autostart,etc/X11/xorg.conf.d,opt/etc}
 wget -q --show-progress -O /tmp/dekuve/config/includes.chroot/usr/local/bin/dpcontrol https://github.com/rauldipeas/dekuve/raw/main/assets/dpcontrol/dpcontrol
+chmod +x /tmp/dekuve/config/includes.chroot/usr/local/bin/dpcontrol
 wget -q --show-progress -O /tmp/dekuve/config/includes.chroot/etc/xdg/autostart/dpcontrol.desktop https://github.com/rauldipeas/dekuve/raw/main/assets/dpcontrol/dpcontrol.desktop
 wget -q --show-progress -O /tmp/dekuve/config/includes.chroot/etc/X11/xorg.conf.d/00-touchpad.conf https://github.com/rauldipeas/dekuve/raw/main/assets/touchpad.conf
 wget -q --show-progress -O /tmp/dekuve/config/includes.chroot/opt/etc/blur-effect.conf https://github.com/rauldipeas/dekuve/raw/main/assets/blur-effect.conf
