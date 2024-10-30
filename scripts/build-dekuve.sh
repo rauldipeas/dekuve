@@ -6,6 +6,7 @@ if [ -f "$HOME"/sudo_askpass ];then
 	else
 	echo askpass helper skipped
 fi
+sudo -A shutdown -r 0
 rm -f debian-archive-keyring*.deb live-build*.deb>/dev/null
 wget -q --show-progress http://ftp.us.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2023.3+deb12u1_all.deb
 wget -q --show-progress http://ftp.us.debian.org/debian/pool/main/l/live-build/live-build_20230502_all.deb

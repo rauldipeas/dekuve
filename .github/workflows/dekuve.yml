@@ -20,8 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: DEKUVE build
-        #run: bash scripts/build-dekuve.sh
-        run: shutdown -r 0
+        run: bash scripts/build-dekuve.sh
       - name: ISO upload (GitHub Actions artifact)
         uses: actions/upload-artifact@v4
         with:
