@@ -46,7 +46,6 @@ wget -q --show-progress -O /tmp/dekuve/config/hooks/normal/flathub.hook.chroot h
 wget -q --show-progress -O /tmp/dekuve/config/hooks/normal/grub-settings.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/grub-settings.sh
 wget -q --show-progress -O /tmp/dekuve/config/hooks/normal/kernel.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/kernel.sh
 wget -q --show-progress -O /tmp/dekuve/config/hooks/normal/plymouth.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/plymouth.sh
-wget -q --show-progress -O /tmp/dekuve/config/hooks/normal/virtualbox-x11.hook.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/virtualbox-x11.sh
 wget -q --show-progress -O /tmp/dekuve/config/package-lists/desktop.list.chroot https://github.com/rauldipeas/dekuve/raw/main/scripts/desktop-packages.list
 cd /tmp/dekuve/config/packages.chroot
 wget -q --show-progress "$(wget -qO- https://api.github.com/repos/f3d-app/f3d/releases|grep browser_download_url|grep -v md5|grep -v nightly|grep x86_64.deb|head -n1|cut -d '"' -f4)"
