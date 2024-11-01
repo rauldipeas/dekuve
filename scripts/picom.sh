@@ -31,7 +31,7 @@ sudo -A apt install -y\
     ninja-build\
     pkg-config\
     uthash-dev
-git clone --depth 1 --branch v10.2 https://github.com/yshui/picom
+git clone --depth 1 --branch v12.2 https://github.com/yshui/picom
 cd picom
 git submodule update --init --recursive
 meson --buildtype=release . build
@@ -41,7 +41,7 @@ mkdir -p picom/DEBIAN picom/usr/bin
 #PICOM_VER=`echo "$(git describe --always --dirty)"-"$(git log -1 --date=short --pretty=format:%cd)"|sed 's/v//g'|sed 's/_/-/g'`
 cat <<EOF |tee picom/DEBIAN/control
 Package: picom
-Version: 10.2
+Version: 12.2
 Architecture: amd64
 Maintainer: Yuxuan Shui <yshuiv7@gmail.com>
 Depends: python3, libc6 (>= 2.29), libconfig9, libdbus-1-3 (>= 1.9.14), libev4 (>= 1:4.04), libgl1, libpcre3, libpixman-1-0 (>= 0.25.2), libx11-6, libx11-xcb1 (>= 2:1.6.12), libxcb-composite0, libxcb-damage0, libxcb-glx0, libxcb-image0 (>= 0.2.1), libxcb-present0, libxcb-randr0 (>= 1.10), libxcb-render-util0, libxcb-render0 (>= 1.12), libxcb-shape0, libxcb-sync1, libxcb-xfixes0, libxcb-xinerama0, libxcb1 (>= 1.9.2)
