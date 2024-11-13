@@ -33,7 +33,8 @@ sudo -A apt install -y\
     uthash-dev
 PICOM_TAG=`echo $(curl -s https://api.github.com/repos/yshui/picom/releases|grep tag|grep -v Next|head -n1|cut -d '"' -f4|sed 's/https:\/\/github.com\/yshui\/picom\/releases\/tag\///g'|sed 's/v//g')`
 #PICOM_VER=`echo "$(git describe --always --dirty)"-"$(git log -1 --date=short --pretty=format:%cd)"|sed 's/v//g'|sed 's/_/-/g'`
-git clone --depth 1 --branch $PICOM_TAG https://github.com/yshui/picom
+#git clone --depth 1 --branch $PICOM_TAG https://github.com/yshui/picom
+git clone --depth 1 https://github.com/yshui/picom
 cd picom
 git submodule update --init --recursive
 meson --buildtype=release . build
