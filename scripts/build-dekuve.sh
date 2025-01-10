@@ -50,16 +50,20 @@ wget -q --show-progress -O /tmp/dekuve/config/package-lists/desktop.list.chroot 
 cd /tmp/dekuve/config/packages.chroot
 wget -q --show-progress "$(wget -qO- https://api.github.com/repos/f3d-app/f3d/releases|grep browser_download_url|grep -v md5|grep -v nightly|grep x86_64.deb|head -n1|cut -d '"' -f4)"
 dpkg-name F3D*.deb
-wget -q --show-progress "$(wget -qO- https://api.github.com/repos/localsend/localsend/releases|grep browser_download_url|grep .deb|head -n1|cut -d '"' -f4)"
+wget -q --show-progress "$(curl -sL https://iriun.com/|grep deb|cut -d '"' -f4)"
+dpkg-name iriun*.deb
+wget -q --show-progress "$(wget -qO- https://api.github.com/repos/localsend/localsend/releases|grep browser_download_url|grep x86-64.deb|head -n1|cut -d '"' -f4)"
 dpkg-name LocalSend*.deb
+wget -q --show-progress -O mailspring.deb 'https://updates.getmailspring.com/download?platform=linuxDeb'
+dpkg-name mailspring.deb
 wget -q --show-progress "$(wget -qO- https://api.github.com/repos/JezerM/web-greeter/releases|grep browser_download_url|grep debian.deb|head -n1|cut -d '"' -f4)"
-dpkg-name web-greeter*.deb
-wget -q --show-progress "$(wget -qO- https://api.github.com/repos/bkw777/mainline/releases|grep browser_download_url|grep .deb|head -n1|cut -d '"' -f4)"
 dpkg-name mainline*.deb
 wget -q --show-progress https://mxrepo.com/mx/repo/pool/main/x/xfce4-docklike-plugin/"$(wget -qO- https://mxrepo.com/mx/repo/pool/main/x/xfce4-docklike-plugin/|grep amd64.deb|tail -n1|cut -d '"' -f2)"
-dpkg-name xfce4-docklike-plugin*.deb
+dpkg-name web-greeter*.deb
 wget -q --show-progress http://packages.linuxmint.com/pool/main/w/webapp-manager/"$(wget -qO- http://packages.linuxmint.com/pool/main/w/webapp-manager/|grep .deb|tail -n1|cut -d '"' -f4)"
 dpkg-name webapp-manager*.deb
+wget -q --show-progress "$(wget -qO- https://api.github.com/repos/bkw777/mainline/releases|grep browser_download_url|grep .deb|head -n1|cut -d '"' -f4)"
+dpkg-name xfce4-docklike-plugin*.deb
 bash <(wget -qO- https://github.com/rauldipeas/dekuve/raw/main/scripts/cortile.sh)
 bash <(wget -qO- https://github.com/rauldipeas/dekuve/raw/main/scripts/picom.sh)
 cd /tmp/dekuve/
